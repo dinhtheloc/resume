@@ -59,15 +59,14 @@ function Nav() {
                     <span className="btn-inner--icon d-block pt-2">Projects</span>
                 </a>
             </div>
-            {/* <div className="card bg-gradient-warning">
+            <div className="card bg-gradient-info">
+                <div className="card-header">
+                    <h5 className="text-white mb-0">Objective</h5>
+                  </div>
                 <div className="card-body">
-                    <h5 className="text-white">Hello, Friend!</h5>
-                    <p className="text-white mb-4">
-                        Why not start using Purpose Application UI Kit and create something amazing today?
-                            </p>
-                    <a href="https://themes.getbootstrap.com/product/purpose-application-ui-kit/" className="btn btn-sm btn-block btn-white rounded-pill" target="_blank">Get started</a>
+                    <p className="text-white mb-4">Take advantages of soft & technical skills and become a professional developer.</p>
                 </div>
-            </div> */}
+            </div>
         </div>
 
     );
