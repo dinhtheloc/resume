@@ -5,11 +5,18 @@ import {
     Route,
     NavLink
 } from "react-router-dom";
+import { useSelector , useDispatch} from 'react-redux';
 
-function Nav(props) {
+function Nav() {
+    const isShow = useSelector(state => state.navigation.isShow);
 
-    const [isShow, setIsShow] = useState(props.isShowState);
+    const dispatch = useDispatch();
 
+    const changeIsShow = () => {
+        dispatch({
+            type: 'TOGGLE_NAV'
+        })
+    }
 
     return (
         <div className={`sidenav ${isShow ? 'show' : ''}`} id="sidenav-main">
@@ -18,7 +25,7 @@ function Nav(props) {
                     <h3 className="text-white font-weight-bold">Resume</h3>
                 </a>
                 <div className="ml-auto">
-                    <div className="sidenav-toggler sidenav-toggler-dark d-md-none" onClick={ () => setIsShow(!isShow) }>
+                    <div className={`sidenav-toggler sidenav-toggler-dark d-md-none ${isShow ? 'active' : ''}`} onClick={ () => changeIsShow() }>
                         <div className="sidenav-toggler-inner">
                             <i className="sidenav-toggler-line bg-white"></i>
                             <i className="sidenav-toggler-line bg-white"></i>

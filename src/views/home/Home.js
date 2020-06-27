@@ -174,8 +174,8 @@ function Home() {
             </div>
             <div className="card-body">
               <p>Posts and Telecommunications Institute of Technology, HCMC | 2012 - 2017 <br></br>
-            Bachelor of Engineer<br></br>
-            GPA 2.6<br></br>
+                Bachelor of Engineer<br></br>
+                {/* GPA 2.6<br></br> */}
               </p>
             </div>
           </div>

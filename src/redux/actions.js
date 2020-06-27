@@ -2,8 +2,7 @@ import { TOGGLE_NAV } from "./actionTypes";
 
 
 
-export const toggleNav = id => ({
-    type: TOGGLE_NAV,
-    payload: { id }
+export const toggleNav = () => ({
+    type: TOGGLE_NAV
 });
 
