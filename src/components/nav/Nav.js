@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink
+} from "react-router-dom";
+
+function Nav(props) {
+
+    const [isShow, setIsShow] = useState(props.isShowState);
 
 
-function Nav() {
     return (
-        <div className="sidenav show" id="sidenav-main">
+        <div className={`sidenav ${isShow ? 'show' : ''}`} id="sidenav-main">
             <div className="sidenav-header d-flex align-items-center">
                 <a className="navbar-brand" href="../../index.html">
                     <h3 className="text-white font-weight-bold">Resume</h3>
                 </a>
                 <div className="ml-auto">
-                    <div className="sidenav-toggler sidenav-toggler-dark d-md-none active" data-action="sidenav-unpin" data-target="#sidenav-main">
+                    <div className="sidenav-toggler sidenav-toggler-dark d-md-none" onClick={ () => setIsShow(!isShow) }>
                         <div className="sidenav-toggler-inner">
                             <i className="sidenav-toggler-line bg-white"></i>
                             <i className="sidenav-toggler-line bg-white"></i>
@@ -48,21 +57,22 @@ function Nav() {
                 </div>
             </div>
             <div className="nav-application clearfix">
-                <a href="../../application/home.html" className="btn btn-square text-sm active">
+                <NavLink className="btn btn-square text-sm" exact activeClassName="active" to="/">
                     <span className="btn-inner--icon d-block"><i className="fas fa-home fa-2x"></i></span>
                     <span className="btn-inner--icon d-block pt-2">Home</span>
-                </a>
-                <a href="../../application/project/card-listing.html" className="btn btn-square text-sm">
+                </NavLink>
+
+                <NavLink activeClassName="active" to="/project" className="btn btn-square text-sm">
                     <span className="btn-inner--icon d-block">
                         <i className="fas fa-project-diagram fa-2x"></i>
                     </span>
                     <span className="btn-inner--icon d-block pt-2">Projects</span>
-                </a>
+                </NavLink>
             </div>
             <div className="card bg-gradient-info">
                 <div className="card-header">
                     <h5 className="text-white mb-0">Objective</h5>
-                  </div>
+                </div>
                 <div className="card-body">
                     <p className="text-white mb-4">Take advantages of soft & technical skills and become a professional developer.</p>
                 </div>
