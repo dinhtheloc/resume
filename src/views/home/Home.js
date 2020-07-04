@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import styles from './style.module.scss';
 
-import Swiper from 'swiper';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/swiper.scss';
 
 function Home() {
 
-  useEffect(() => {
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 5,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
-    });
-  });
 
   return (
 
@@ -66,102 +61,97 @@ function Home() {
         <div className="col-12">
           <div className="card card-fluid">
             <div className="card-body">
-              <div className="swiper-container">
-                <div className="swiper-wrapper">
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png" />
-                    </a>
-                  </div>
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://ih1.redbubble.net/image.630715057.4214/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" />
-                    </a>
-                  </div>
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://angular.io/assets/images/logos/angular/angular.png" />
-                    </a>
-                  </div>
 
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://www.gstatic.com/devrel-devsite/prod/vec8054dd6c74f1424e7592d63d6d2872d5c94cd4d7afe1dc4e818c4ad10419d1/firebase/images/touchicon-180.png" />
-                    </a>
-                  </div>
-
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://upload.wikimedia.org/wikipedia/vi/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png" />
-                    </a>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://images.tutorialedge.net/images/node.png" />
-                    </a>
-                  </div>
-
-
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png" />
-                    </a>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://cdn.auth0.com/blog/jwtalgos/logo.png" />
-                    </a>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://cdn.shopify.com/s/files/1/1300/8977/products/2846416_1200x1200.png?v=1556134203" />
-                    </a>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://jmetervietnam.files.wordpress.com/2019/04/1_uhzoof1etgckn9_xisst4w.png" />
-                    </a>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://phambinh.net/wp-content/uploads/2019/07/mysql_PNG9.png" />
-                    </a>
-                  </div>
-
-                  {/* <div className="swiper-slide">
-                  <a href="#" class="avatar avatar-lg rounded-circle">
-                    <img alt="Image placeholder" src="https://unitopsmedia.com/wp-content/uploads/2019/10/git.png" />
+              <Swiper
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                slidesPerView={5}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+              >
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh1.png" />
                   </a>
-                </div> */}
 
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://img.favpng.com/10/1/9/sass-logo-cascading-style-sheets-scalable-vector-graphics-clip-art-png-favpng-MBDAQaKjCfm6GBcGEKDZdiM04.jpg" />
-                    </a>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <a href="#" class="avatar avatar-lg rounded-circle">
-                      <img alt="Image placeholder" src="https://ttsvn.net/wp-content/uploads/2016/04/PTS.png" />
-                    </a>
-                  </div>
-
-                  {/* <div className="swiper-slide">
-                  <a href="#" class="avatar avatar-lg rounded-circle">
-                    <img alt="Image placeholder" src="https://cdn.freebiesupply.com/logos/thumbs/2x/figma-1-logo.png" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh2.jpg" />
                   </a>
-                </div> */}
-                </div>
-              </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh3.png" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh4.png" />
+                  </a>
+                </SwiperSlide>
 
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh5.png" />
+                  </a>
+
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh6.png" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh7.png" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh8.png" />
+                  </a>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh9.webp" />
+                  </a>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh10.png" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh11.png" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh12.png" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh13.jpg" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh14.png" />
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <a href="#" className="avatar avatar-lg rounded-circle">
+                    <img alt="Image placeholder" src="/img/img-slide/hinh15.png" />
+                  </a>
+                </SwiperSlide>
+              </Swiper>
             </div>
+
+
           </div>
         </div>
       </div>
@@ -175,6 +165,7 @@ function Home() {
             <div className="card-body">
               <p>Posts and Telecommunications Institute of Technology, HCMC | 2012 - 2017 <br></br>
                 Bachelor of Engineer<br></br>
+                Engineer’s Degree: Computer Software Engineering<br></br>
                 {/* GPA 2.6<br></br> */}
               </p>
             </div>
